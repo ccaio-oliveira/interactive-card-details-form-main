@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Grotesk';
+    font-size: 18px;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    background: url('../../images/bg-main-desktop.png');
+    height: 100vh;
+    width: 25vw;
+}
+
+/* Front of the card */
+
+#cardFront {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    padding: 20px;
+    width: 260px;
+    height: 120px;
+    border-radius: 7px;
+    background: url('../../images/bg-card-front.png') no-repeat right center;
+    position: relative;
+    top: 150px;
+    left: 100px;
+}
+
+#cardFront img {
+    width: 50px;
+}
+
+#numbers {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#numberCard {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+#nameVal {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+}
+
+/* Back card */
+#cardBack {
+    position: relative;
+    top: 175px;
+    left: 160px;
+    border-radius: 7px;
+}
+
+#cardBack img{
+    width: 290px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+}
+
+#cvc {
+    color: #fff;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    position: relative;
+    bottom: 93px;
+    left: 230px;
+}
+
+/* main content */
+main {
+    width: 100%;
+}
+
+#form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid hsl(270, 3%, 87%);
+}
+
+input::placeholder {
+    color: hsl(279, 6%, 55%);
+    letter-spacing: 1px;
+    opacity: 0.5;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border: 1.5px solid hsl(278, 68%, 11%);
+}
+
+label {
+    color: hsl(278, 68%, 11%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.6rem;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+
+.inp {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#dateCVC {
+    display: flex;
+    justify-content: space-between;
+}
+
+#dateCVC .inp {
+    width: 50%;
+}
+
+#inpDate {
+    display: flex;
+}
+
+#inpDate input {
+    width: 50px;
+    margin-right: 10px;
+}
+
+#cvcNumber {
+    width: 137px;
+}
+
+button {
+    color: #fff;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 7px;
+    border: 0px;
+    background: hsl(278, 68%, 11%);
+}
