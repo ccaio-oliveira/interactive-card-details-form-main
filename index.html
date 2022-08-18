@@ -28,8 +28,8 @@
                 <div id="numbers">
                     <p id="numberCard">0000 0000 0000 0000</p>
                     <div id="nameVal">
-                        <p id="name">Jane Appleseed</p>
-                        <p id="validade">00/00</p>
+                        <p id="cardName">Jane Appleseed</p>
+                        <p id="validade"><span id="valM">00</span>/<span id="valY">00</span></p>
                     </div>
                 </div>
             </div>
@@ -44,23 +44,26 @@
                     <div class="inp">
                         <label for="">CardHolder Name</label>
                         <input type="text" id="name" placeholder="e.g. Jane Appleseed">
+                        <p id="pNameError" class="none">Can't be blank</p>
                     </div>
                     <div class="inp">
                         <label for="">Card number</label>
-                        <input type="text" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000">
+                        <input type="text" id="cardNumber" placeholder="e.g. 1234567891230000">
+                        <p id="pNumberError" class="none">Can't be blank</p>
                     </div>
                     <div id="dateCVC">
                         <div class="inp">
                             <label for="">exp. date (mm/yy)</label>
                             <div id="inpDate">
-                                <input type="text" class="date" placeholder="MM">
-                                <input type="text" class="date" placeholder="YY">
+                                <input type="text" class="date" placeholder="MM" id="month">
+                                <input type="text" class="date" placeholder="YY" id="year">
                             </div>
-
+                            <p id="pDateError" class="none">Can't be blank</p>
                         </div>
                         <div class="inp">
                             <label for="">cvc</label>
                             <input type="text" id="cvcNumber" placeholder="e.g. 123">
+                            <p id="pCvcError" class="none">Can't be blank</p>
                         </div>
                     </div>
                     <button>Confirm</button>
@@ -69,6 +72,7 @@
         </main>
     </div>
 
+    <script src="./assets/js/index.js"></script>
 </body>
 
 </html>
