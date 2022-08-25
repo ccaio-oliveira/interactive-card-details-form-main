@@ -17,19 +17,26 @@ const inputCvc = document.querySelector('#cvcNumber');
 const cvcNumber = document.querySelector('#cvc');
 const pCvcError = document.querySelector('#pCvcError');
 
+const main_content = document.querySelector('main');
+const btnForm = document.querySelector('#btn');
+
+function error(element, pError, pCard, text){
+    if(element.value.length === 0){
+        pError.setAttribute('class', 'erro');
+        pCard.innerHTML = text;
+        element.setAttribute('class', 'error');
+    } else {
+        pError.setAttribute('class', 'none');
+        element.classList.remove('error');
+    }
+}
+
 inputName.onkeyup = () => {
     pNameCard.innerHTML = inputName.value;
 }
 
 inputName.onblur = () => {
-    if(inputName.value.length === 0){
-        pNameError.setAttribute('class', 'erro');
-        pNameCard.innerHTML = 'Jane Appleseed';
-        inputName.setAttribute('class', 'error');
-    } else {
-        pNameError.setAttribute('class', 'none');
-        inputName.classList.remove('error');
-    }
+    error(inputName, pNameError, pNameCard, 'Jane Appleseed');
 }
 
 inputNumber.onkeyup = () => {
@@ -40,14 +47,7 @@ inputNumber.onkeyup = () => {
 }
 
 inputNumber.onblur = () => {
-    if(inputNumber.value.length === 0){
-        pNumberError.setAttribute('class', 'erro');
-        pNumber.innerHTML = '0000 0000 0000 0000';
-        inputNumber.setAttribute('class', 'error');
-    } else {
-        pNumberError.setAttribute('class', 'none');
-        inputNumber.classList.remove('error');
-    }
+    error(inputNumber, pNumberError, pNumber, '0000 0000 0000 0000');
 }
 
 inputDateM.onkeyup = () => {
@@ -58,14 +58,7 @@ inputDateM.onkeyup = () => {
 }
 
 inputDateM.onblur = () => {
-    if(inputDateM.value.length === 0){
-        pDateError.setAttribute('class', 'erro');
-        spanValM.innerHTML = '00';
-        inputDateM.setAttribute('class', 'error');
-    } else {
-        pDateError.setAttribute('class', 'none');
-        inputDateM.classList.remove('error');
-    }
+    error(inputDateM, pDateError, spanValM, '00');
 }
 
 inputDateY.onkeyup = () => {
@@ -76,14 +69,7 @@ inputDateY.onkeyup = () => {
 }
 
 inputDateY.onblur = () => {
-    if(inputDateY.value.length === 0){
-        pDateError.setAttribute('class', 'erro');
-        spanValY.innerHTML = '00';
-        inputDateY.setAttribute('class', 'error');
-    } else {
-        pDateError.setAttribute('class', 'none');
-        inputDateY.classList.remove('error');
-    }
+    error(inputDateY, pDateError, spanValY, '00');
 }
 
 inputCvc.onkeyup = () => {
@@ -94,12 +80,17 @@ inputCvc.onkeyup = () => {
 }
 
 inputCvc.onblur = () => {
-    if(inputCvc.value.length === 0){
-        pCvcError.setAttribute('class', 'erro');
-        cvcNumber.innerHTML = '000';
-        inputCvc.setAttribute('class', 'error');
+    error(inputCvc, pCvcError, cvcNumber, '000');
+}
+
+const confirmElements = "<div id='confirm'><img src='./images/icon-complete.svg' alt='Icon complete'><h1>THANK YOU!</h1><p>We've added your card details</p><button>Continue</button></div>";
+
+btnForm.onclick = e => {    
+    e.preventDefault();
+    if(inputName.value.length === 0 || inputNumber.value.length === 0 || inputDateM.value.length === 0 || inputDateY.value.length === 0 || inputCvc.value.length === 0){
+        alert("Check if you aren't missing anything");
     } else {
-        pCvcError.setAttribute('class', 'none');
-        inputCvc.classList.remove('error');
+        main_content.innerHTML = confirmElements;
     }
+    
 }
